@@ -1,3 +1,4 @@
+import 'package:facebook_ui/widget/main_bar.dart';
 import 'package:flutter/material.dart';
 
 class FacebookHome extends StatefulWidget {
@@ -12,47 +13,8 @@ class _FacebookHomeState extends State<FacebookHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
-      body: SafeArea(
-        child: Column(children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                const Text(
-                  "facebook",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
-                ),
-                const Spacer(
-                  flex: 1,
-                ),
-                CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Colors.grey.shade800,
-                  child: const Icon(
-                    Icons.search,
-                    color: Colors.white,
-                    size: 20,
-                  ),
-                ),
-                const SizedBox(
-                  width: 6,
-                ),
-                CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Colors.grey.shade800,
-                  child: const Icon(
-                    Icons.message,
-                    color: Colors.white,
-                    size: 15,
-                  ),
-                )
-              ],
-            ),
-          )
-        ]),
+      body: const SafeArea(
+        child: Column(children: [MainBar()]),
       ),
     );
   }
