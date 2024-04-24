@@ -1,5 +1,6 @@
 import 'package:facebook_ui/widget/icon_bar.dart';
 import 'package:facebook_ui/widget/main_bar.dart';
+import 'package:facebook_ui/widget/new_post_bar.dart';
 import 'package:flutter/material.dart';
 
 class FacebookHome extends StatefulWidget {
@@ -27,41 +28,7 @@ class _FacebookHomeState extends State<FacebookHome> {
           const Divider(
             thickness: 0.6,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CircleAvatar(
-                  backgroundImage: NetworkImage(profilePic),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(color: Colors.grey.shade500)),
-                    child: const Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Text(
-                        "What's On Your Mind",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                const Icon(
-                  Icons.photo_album_rounded,
-                  color: Colors.green,
-                )
-              ],
-            ),
-          )
+          NewPostBar(profilePic: profilePic)
         ]),
       ),
     );
